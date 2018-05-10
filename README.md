@@ -6,11 +6,9 @@
 In this project our goal was to safely navigate around a virtual highway with other traffic that is driving +-10 MPH of the 50 MPH speed limit.
 To achieve this goal, I implemented the functionality using Frenet coordinate transformations along with spline interoplation. The highway map waypoints were available in a csv file, but the waypoints are widely spaced which result in sharp corners. The sharp corners are pretty bad as it can cause sudden change of accelerations. Using the spline from spline.h library I was able to smooth out the path planning path.
 
-As described in the QnA video of this project, I used three widely spread frenet points(30m apart).
+As described in the QnA video of this project, I used three widely spread frenet points(30m apart) instead of 50 to make the projected path smooth and free of jerk.In order to make the car accelerate or decelrate smoother, I implemented a logic so that the reference velocity gets incremented or decremented at a constant 5 m/s^2.
 
-In order to make the car accelerate or decelrate smoother, I implemented a logic so that the reference velocity gets incremented or decremented at a constant 5 m/s^2.
-
-The lane change logic was quite simple, if there was a car in front of the ego vehicle then it would see if it was safe to change to the left lane, if the left lane was not safe then it would try to change to the right lane. Some improvements could be made to this lane change algorithm by projecting further ahead and using a cost function to see if it really resulted in increased speed. Currently the car was able to go 4.32 miles around the highway without any incidents in 5:36.
+The lane change logic was quite simple, if there was a car in front of the vehicle then it would see if it was safe to change to the left lane, if the vehicle is already in left most lane then the car will reduce it is speed to avoid collision. There are scope of improvement to implement more logic using finite state machine to implement more lane change or keep lane logic. Currently the car was able to go 4.32 miles around the highway without any incidents.
 
 
 ---
