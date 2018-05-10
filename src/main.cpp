@@ -202,10 +202,10 @@ int main() {
   }
 
 	//Starting lane number
-	int lane = 2;
+	int lane = 1;
 
 	//Reference Velocity
-	double ref_vel = 25;
+	double ref_vel = 49.5;
 
   h.onMessage([&lane,&map_waypoints_x,&map_waypoints_y,&map_waypoints_s,&map_waypoints_dx,&map_waypoints_dy,&ref_vel](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length,
                      uWS::OpCode opCode) {
@@ -283,7 +283,7 @@ int main() {
 							}
 						}
 
-						double acceln = 0.424; // 0.224
+						double acceln = 2.224; // 0.224
 
 						if(too_close){
 							ref_vel -= acceln;

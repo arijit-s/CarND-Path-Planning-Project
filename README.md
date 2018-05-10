@@ -1,3 +1,15 @@
+# Writeup for Path-Planning-Project
+
+---
+## There is a reflection on how to generate paths.
+
+In this project our goal was to safely navigate around a virtual highway with other traffic that is driving +-10 MPH of the 50 MPH speed limit.
+To achieve this goal, I implemented the functionality using Frenet coordinate transformations along with spline interoplation. The highway map waypoints 
+
+The lane change logic was quite simple, if there was a car in front of the ego vehicle then it would see if it was safe to change to the left lane, if the left lane was not safe then it would try to change to the right lane. Some improvements could be made to this lane change algorithm by projecting further ahead and using a cost function to see if it really resulted in increased speed. Currently the car was able to go 4.32 miles around the highway without any incidents in 5:36.
+
+
+---
 # CarND-Path-Planning-Project
 Self-Driving Car Engineer Nanodegree Program
    
